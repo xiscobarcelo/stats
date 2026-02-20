@@ -1,6 +1,6 @@
 {
-  "name": "PoolFlow_TEST",
-  "short_name": "PoolFlow_TEST",
+  "name": "PoolFlow",
+  "short_name": "PoolFlow",
   "start_url": "https://xiscobarcelo.github.io/stats/index.html",
   "display": "standalone",
   "icons": [
