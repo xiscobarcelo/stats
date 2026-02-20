@@ -1,0 +1,1161 @@
+/* ===================================
+   ESTILOS ESPECÍFICOS - TORNEOS
+   Estilo Apple minimalista
+   =================================== */
+
+/* ===================================
+   CARDS DE TORNEOS
+   =================================== */
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 32px 0;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+}
+
+.pagination-info {
+    font-size: 0.95rem;
+    color: #86868b;
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 16px;
+}
+
+.pagination-btn {
+    padding: 10px 20px;
+    background: rgba(102, 126, 234, 0.1);
+    border: 1.5px solid rgba(102, 126, 234, 0.3);
+    border-radius: 10px;
+    color: #667eea;
+    cursor: pointer;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.tournaments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+.section-header{
+   margin-bottom:20px;
+}
+.tournament-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+   margin-top:20px;
+}
+
+.tournament-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tournament-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.tournament-card:hover::before {
+    opacity: 1;
+}
+
+.tournament-card.champion::before {
+    background: linear-gradient(90deg, #ffd700, #ffed4e);
+    opacity: 1;
+}
+
+.tournament-card.runner-up::before {
+    background: linear-gradient(90deg, #c0c0c0, #e8e8e8);
+    opacity: 1;
+}
+
+.tournament-card.semifinal::before {
+    background: linear-gradient(90deg, #cd7f32, #e9967a);
+    opacity: 1;
+}
+
+.tournament-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.tournament-trophy {
+    font-size: 2rem;
+    margin-right: 12px;
+}
+
+.tournament-title {
+    flex: 1;
+}
+
+.tournament-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.tournament-date {
+    font-size: 0.875rem;
+    color: #86868b;
+    font-weight: 500;
+}
+
+.tournament-result-badge {
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.tournament-result-badge.champion {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #664d00;
+}
+
+.tournament-result-badge.runner-up {
+    background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+    color: #4a4a4a;
+}
+
+.tournament-result-badge.semifinal {
+    background: linear-gradient(135deg, #cd7f32, #e9967a);
+    color: #4a2400;
+}
+
+.tournament-result-badge.other {
+    background: rgba(0, 0, 0, 0.08);
+    color: #1d1d1f;
+}
+
+.tournament-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.tournament-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tournament-detail-label {
+    font-size: 0.75rem;
+    color: #86868b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.tournament-detail-value {
+    font-size: 0.95rem;
+    color: #1d1d1f;
+    font-weight: 600;
+}
+
+.tournament-circuit-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.tournament-stats {
+    display: flex;
+    gap: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+   margin-top:20px;
+}
+
+.tournament-stat {
+    flex: 1;
+    text-align: center;
+}
+
+.tournament-stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 2px;
+}
+
+.tournament-stat-label {
+    font-size: 0.75rem;
+    color: #86868b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tournament-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.tournament-action-btn {
+    flex: 1;
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.01);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tournament-action-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: #000;
+}
+
+.tournament-action-btn.delete {
+    color: #ff3b30;
+    border-color: rgba(255, 59, 48, 0.3);
+}
+
+.tournament-action-btn.delete:hover {
+    background: rgba(255, 59, 48, 0.1);
+    border-color: #ff3b30;
+}
+
+/* ===================================
+   FORMULARIO DE TORNEO
+   =================================== */
+
+.tournament-form-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    max-width: 800px;
+    margin: 20px auto 40px;
+}
+
+.form-section {
+    margin-bottom: 32px;
+}
+
+.form-section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+/* ===================================
+   ESTADÍSTICAS GLOBALES
+   =================================== */
+
+.stats-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 48px;
+}
+
+.stat-card-tournament {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card-tournament::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.stat-card-tournament:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card-tournament:hover::before {
+    opacity: 1;
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #86868b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+/* ===================================
+   CIRCUITOS
+   =================================== */
+
+.circuits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.circuit-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s;
+}
+
+.circuit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+.circuit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.circuit-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 4px;
+}
+
+.circuit-year {
+    font-size: 0.95rem;
+    color: #86868b;
+    font-weight: 500;
+}
+
+.circuit-points {
+    text-align: right;
+}
+
+.circuit-points-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #667eea;
+    line-height: 1;
+}
+
+.circuit-points-label {
+    font-size: 0.75rem;
+    color: #86868b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.circuit-description {
+    color: #86868b;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.circuit-tournaments-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.circuit-ranking {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.circuit-ranking-label {
+    font-size: 0.75rem;
+    color: #86868b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.circuit-ranking-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1d1d1f;
+}
+
+.circuit-ranking-value .ordinal {
+    font-size: 1rem;
+    color: #86868b;
+}
+
+/* ===================================
+   FILTROS
+   =================================== */
+
+.filters-bar {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 150px;
+}
+
+.filter-label {
+    font-size: 0.75rem;
+    color: #86868b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.filter-select {
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1d1d1f;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-select:hover {
+    border-color: #000;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.filter-reset {
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    cursor: pointer;
+    transition: all 0.2s;
+    align-self: flex-end;
+}
+
+.filter-reset:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: #000;
+}
+
+/* ===================================
+   ESTADO VACÍO
+   =================================== */
+
+.empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px dashed rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin: 40px 0;
+}
+
+.empty-state-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.empty-state-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+}
+
+.empty-state-description {
+    font-size: 1rem;
+    color: #86868b;
+    margin-bottom: 24px;
+}
+
+/* ===================================
+   TIMELINE DE TORNEOS
+   =================================== */
+
+.tournament-timeline {
+    position: relative;
+    padding-left: 40px;
+    margin: 40px 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #667eea, #764ba2);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -32px;
+    top: 8px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+}
+
+.timeline-dot.champion {
+    border-color: #ffd700;
+    box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.2);
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* ===================================
+   MODAL DE DETALLES
+   =================================== */
+
+.tournament-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+    animation: fadeIn 0.3s;
+}
+
+.tournament-modal-content {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.modal-close {
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: rotate(90deg);
+}
+
+/* ===================================
+   EXPORT/IMPORT
+   =================================== */
+
+.export-section {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.8);    
+   border-radius: 16px;
+    padding: 24px;
+    margin: 32px 0;
+       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.export-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.export-btn {
+    flex: 1;
+    padding: 12px 24px;
+    background: white;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #667eea;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.export-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+
+
+<!-- ============================================ -->
+<!-- ESTILOS CSS -->
+<!-- Añadir en la sección <style> -->
+<!-- ============================================ -->
+
+/* Contenedor del selector de circuitos */
+.circuit-selector-container {
+    margin-bottom: 24px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.selector-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.selector-label {
+    font-weight: 600;
+    color: #1d1d1f;
+    font-size: 15px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+/* Checkboxes de circuitos */
+.circuit-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.circuit-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.circuit-checkbox:hover {
+    border-color: #3b82f6;
+    background: #f0f9ff;
+}
+
+.circuit-checkbox.selected {
+    border-color: #3b82f6;
+    background: #dbeafe;
+}
+
+.circuit-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #3b82f6;
+}
+
+.circuit-checkbox label {
+    cursor: pointer;
+    font-size: 14px;
+    color: #1d1d1f;
+    font-weight: 500;
+    margin: 0;
+    flex: 1;
+}
+
+.circuit-checkbox .circuit-count {
+    font-size: 12px;
+    color: #86868b;
+    background: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.circuit-checkbox.selected .circuit-count {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Mensaje sin circuitos */
+.no-circuits {
+    text-align: center;
+    padding: 40px 20px;
+    color: #86868b;
+}
+
+.no-circuits p {
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Selector de métrica */
+.metric-selector {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.metric-selector label {
+    font-weight: 600;
+    color: #1d1d1f;
+    font-size: 14px;
+}
+
+.metric-selector select {
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+/* Contenedor de la gráfica */
+.chart-container {
+    position: relative;
+    height: 400px;
+    margin-bottom: 32px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+
+/* Tabla comparativa */
+.comparison-table-container {
+    margin-top: 24px;
+}
+
+.comparison-table-container h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 16px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-table thead {
+    background: #f8f9fa;
+}
+
+.comparison-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.comparison-table tbody tr {
+    border-bottom: 1px solid #f3f4f6;
+    transition: background 0.2s;
+}
+
+.comparison-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.comparison-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.comparison-table td {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #1d1d1f;
+}
+
+.comparison-table .circuit-name {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.comparison-table .circuit-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.comparison-table .metric-value {
+    font-weight: 600;
+}
+
+.comparison-table .positive {
+    color: #10b981;
+}
+
+.comparison-table .negative {
+    color: #ef4444;
+}
+
+.comparison-table .neutral {
+    color: #86868b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .circuit-checkboxes {
+        grid-template-columns: 1fr;
+    }
+    
+    .selector-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .btn-small {
+        width: 100%;
+    }
+    
+    .metric-selector {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .metric-selector select {
+        width: 100%;
+    }
+    
+    .chart-container {
+        height: 300px;
+    }
+   .chart-container2{
+   height:300px;
+}
+   .chart-container1{
+   height:550px;
+}
+    .tournaments-grid,
+    .circuits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tournament-form-card {
+        padding: 24px;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-overview {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .filters-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-group {
+        min-width: 100%;
+    }
+    
+    .tournament-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .tournament-modal-content {
+        padding: 24px;
+    }
+    
+    .export-buttons {
+        flex-direction: column;
+    }
+}
+
+/* ===================================
+   ANIMATIONS
+   =================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.tournament-card {
+    animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+}
+
+.tournament-card:nth-child(1) { animation-delay: 0.05s; }
+.tournament-card:nth-child(2) { animation-delay: 0.1s; }
+.tournament-card:nth-child(3) { animation-delay: 0.15s; }
+.tournament-card:nth-child(4) { animation-delay: 0.2s; }
+.tournament-card:nth-child(5) { animation-delay: 0.25s; }
+.tournament-card:nth-child(6) { animation-delay: 0.3s; }
+
+
+/* ===================================
+   GRÁFICOS ANALÍTICOS
+   =================================== */
+
+.analytics-section {
+    margin-bottom: 48px;
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.chart-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s;
+}
+
+.chart-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+.chart-card-wide {
+    grid-column: 1 / -1;
+}
+
+.chart-header {
+    margin-bottom: 20px;
+}
+
+.chart-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 6px;
+}
+
+.chart-description {
+    font-size: 0.875rem;
+    color: #86868b;
+    margin: 0;
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+}
+.chart-container2 {
+    position: relative;
+    height: 300px;
+}
+
+.chart-card-wide .chart-container {
+    height: 400px;
+}
+
+.chart-card-wide .chart-container1 {
+    height: 400px;
+}
+
+/* Responsivo para gráficos */
+@media (max-width: 1024px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-card-wide {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        height: 250px;
+    }
+    
+    .chart-card-wide .chart-container {
+        height: 300px;
+    }
+}
