@@ -1,14 +1,10 @@
 {
-  "name": "PoolFlow",
-  "short_name": "PoolFlow",
-  "start_url": "https://xiscobarcelo.github.io/pool/index.html",
+  "name": "PoolFlow_TEST",
+  "short_name": "PoolFlow_TEST",
+  "start_url": "https://xiscobarcelo.github.io/stats/index.html",
   "display": "standalone",
   "icons": [
-    {
-      "src": "/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
+   
     {
       "src": "/icon-512.png",
       "sizes": "512x512",
